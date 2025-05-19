@@ -8,8 +8,13 @@ public class KafkaConsumer {
 
     // This method will be called whenever a message is received from the Kafka topic
     // The topic name and group ID should match those used in the producer
-    @KafkaListener(topics = "my-topic" , groupId = "my-groud-id")
-    public void listen(String message) {
-        System.out.println("Received message: " + message);
+    @KafkaListener(topics = "my-topic", groupId = "my-groud-id")
+    public void listen1(String message) {
+        System.out.println("Received message 1: " + message);
+    }
+
+    @KafkaListener(topics = "my-topic", groupId = "my-groud-id")
+    public void listen2(String message) {
+        System.out.println("Received message 2: " + message);
     }
 }
